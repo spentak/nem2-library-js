@@ -19,7 +19,7 @@ import CONF from '../conf/conf';
 
 const { BlockchainRoutesApi } = require('../../src/index');
 
-describe('BlockRoutesApi', () => {
+describe('BlockchainRoutesApi', () => {
 	let blockchainRoutesApi;
 	const checkBlockInfo = blockInfo => {
 		/* eslint-disable no-unused-expressions */
