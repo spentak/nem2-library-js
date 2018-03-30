@@ -61,6 +61,7 @@ import TransactionStatusDTO from './model/TransactionStatusDTO';
 import UInt64DTO from './model/UInt64DTO';
 import AccountRoutesApi from './api/AccountRoutesApi';
 import BlockchainRoutesApi from './api/BlockchainRoutesApi';
+import LockRoutesApi from './api/LockRoutesApi';
 import MosaicRoutesApi from './api/MosaicRoutesApi';
 import NamespaceRoutesApi from './api/NamespaceRoutesApi';
 import TransactionRoutesApi from './api/TransactionRoutesApi';
@@ -324,6 +325,12 @@ export {
 	 * @property {module:api/BlockchainRoutesApi}
 	 */
 		BlockchainRoutesApi,
+
+    /**
+     * The LockRoutesApi service constructor.
+     * @property {module:api/LockRoutesApi}
+     */
+        LockRoutesApi,
 
 	/**
 	 * The MosaicRoutesApi service constructor.
