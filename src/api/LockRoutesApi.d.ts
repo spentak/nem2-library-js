@@ -19,11 +19,11 @@ import {ApiClient} from "../ApiClient";
 export declare class LockRoutesApi {
     constructor(apiClient?: ApiClient);
 
-    getFundsLock(hash: string): Promise<any>;
+    getLockFunds(hash: string): Promise<any>;
 
     getSecretLock(secret: string): Promise<any>;
 
-    getFundsLocksInfoFromAccount(accountId: string, queryParams: any): Promise<any>;
+    getLockFundsInfoFromAccount(accountId: string, queryParams: any): Promise<any>;
 
     getSecretLocksInfoFromAccount(accountId: string, queryParams: any): Promise<any>;
 

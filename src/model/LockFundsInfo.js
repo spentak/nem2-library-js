@@ -1,19 +1,3 @@
-/*
- * Copyright 2018 NEM
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /**
  * NIS2 API Endpoints
  * This document defines all the nis2 api endpoints
@@ -36,14 +20,14 @@ import UInt64DTO from './UInt64DTO';
 
 
 /**
-* The FundsLockInfo model module.
-* @module model/FundsLockInfo
+* The LockFundsInfo model module.
+* @module model/LockFundsInfo
 * @version 0.9.1
 */
-export default class FundsLockInfo {
+export default class LockFundsInfo {
     /**
-    * Constructs a new <code>FundsLockInfo</code>.
-    * @alias module:model/FundsLockInfo
+    * Constructs a new <code>LockFundsInfo</code>.
+    * @alias module:model/LockFundsInfo
     * @class
     * @param account {String} 
     * @param accountAddress {String} 
@@ -66,15 +50,15 @@ export default class FundsLockInfo {
     }
 
     /**
-    * Constructs a <code>FundsLockInfo</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>LockFundsInfo</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/FundsLockInfo} obj Optional instance to populate.
-    * @return {module:model/FundsLockInfo} The populated <code>FundsLockInfo</code> instance.
+    * @param {module:model/LockFundsInfo} obj Optional instance to populate.
+    * @return {module:model/LockFundsInfo} The populated <code>LockFundsInfo</code> instance.
     */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new FundsLockInfo();
+            obj = obj || new LockFundsInfo();
 
             
             

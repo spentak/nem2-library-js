@@ -1,19 +1,3 @@
-/*
- * Copyright 2018 NEM
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /**
  * NIS2 API Endpoints
  * This document defines all the nis2 api endpoints
@@ -29,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import FundsLockInfoDTO from '../model/FundsLockInfoDTO';
+import LockFundsInfoDTO from '../model/LockFundsInfoDTO';
 import SecretLockInfoDTO from '../model/SecretLockInfoDTO';
 
 /**
@@ -53,17 +37,17 @@ export default class LockRoutesApi {
 
 
     /**
-     * Get funds lock information
+     * Get lock funds information
      * Returns information for a given hash
      * @param {String} hash The funds for which information should be retreived
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FundsLockInfoDTO} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LockFundsInfoDTO} and HTTP response
      */
-    getFundsLockWithHttpInfo(hash) {
+    getLockFundsWithHttpInfo(hash) {
       let postBody = null;
 
       // verify the required parameter 'hash' is set
       if (hash === undefined || hash === null) {
-        throw new Error("Missing the required parameter 'hash' when calling getFundsLock");
+        throw new Error("Missing the required parameter 'hash' when calling getLockFunds");
       }
 
 
@@ -80,7 +64,7 @@ export default class LockRoutesApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = FundsLockInfoDTO;
+      let returnType = LockFundsInfoDTO;
 
       return this.apiClient.callApi(
         '/lock/hash/{hash}', 'GET',
@@ -90,13 +74,13 @@ export default class LockRoutesApi {
     }
 
     /**
-     * Get funds lock information
+     * Get lock funds information
      * Returns information for a given hash
      * @param {String} hash The funds for which information should be retreived
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FundsLockInfoDTO}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LockFundsInfoDTO}
      */
-    getFundsLock(hash) {
-      return this.getFundsLockWithHttpInfo(hash)
+    getLockFunds(hash) {
+      return this.getLockFundsWithHttpInfo(hash)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -104,21 +88,21 @@ export default class LockRoutesApi {
 
 
     /**
-     * Get funds locks information registered by an account
-     * Returns information of funds locks registered an account
-     * @param {String} accountId The account address or public key for which funds locks should be retrieved
+     * Get lock funds information registered by an account
+     * Returns information of lock funds registered an account
+     * @param {String} accountId The account address or public key for which lock funds should be retrieved
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The numbers of funds locks to return
-     * @param {String} opts.id The last funds lock id to apply pagination
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FundsLockInfoDTO>} and HTTP response
+     * @param {Number} opts.pageSize The numbers of lock funds to return
+     * @param {String} opts.id The last lock funds id to apply pagination
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LockFundsInfoDTO>} and HTTP response
      */
-    getFundsLocksInfoFromAccountWithHttpInfo(accountId, opts) {
+    getLockFundsInfoFromAccountWithHttpInfo(accountId, opts) {
       opts = opts || {};
       let postBody = null;
 
       // verify the required parameter 'accountId' is set
       if (accountId === undefined || accountId === null) {
-        throw new Error("Missing the required parameter 'accountId' when calling getFundsLocksInfoFromAccount");
+        throw new Error("Missing the required parameter 'accountId' when calling getLockFundsInfoFromAccount");
       }
 
 
@@ -137,7 +121,7 @@ export default class LockRoutesApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [FundsLockInfoDTO];
+      let returnType = [LockFundsInfoDTO];
 
       return this.apiClient.callApi(
         '/account/{accountId}/lock/hash', 'GET',
@@ -147,16 +131,16 @@ export default class LockRoutesApi {
     }
 
     /**
-     * Get funds locks information registered by an account
-     * Returns information of funds locks registered an account
-     * @param {String} accountId The account address or public key for which funds locks should be retrieved
+     * Get lock funds information registered by an account
+     * Returns information of lock funds registered an account
+     * @param {String} accountId The account address or public key for which lock funds should be retrieved
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.pageSize The numbers of funds locks to return
-     * @param {String} opts.id The last funds lock id to apply pagination
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FundsLockInfoDTO>}
+     * @param {Number} opts.pageSize The numbers of lock funds to return
+     * @param {String} opts.id The last lock funds id to apply pagination
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LockFundsInfoDTO>}
      */
-    getFundsLocksInfoFromAccount(accountId, opts) {
-      return this.getFundsLocksInfoFromAccountWithHttpInfo(accountId, opts)
+    getLockFundsInfoFromAccount(accountId, opts) {
+      return this.getLockFundsInfoFromAccountWithHttpInfo(accountId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
