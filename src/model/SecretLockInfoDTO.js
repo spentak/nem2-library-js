@@ -27,7 +27,11 @@
  *
  */
 
-import SecretLockInfo from './SecretLockInfo';
+
+import SecretLockDTO from './SecretLockDTO';
+
+
+
 
 
 /**
@@ -40,15 +44,16 @@ export default class SecretLockInfoDTO {
     * Constructs a new <code>SecretLockInfoDTO</code>.
     * @alias module:model/SecretLockInfoDTO
     * @class
+    * @param lock {module:model/SecretLockDTO} 
     */
 
-    constructor() {
+    constructor(lock) {
         
 
         
         
 
-        
+        this['lock'] = lock;
 
         
     }
@@ -68,17 +73,17 @@ export default class SecretLockInfoDTO {
             
             
 
-            if (data.hasOwnProperty('mosaicId')) {
-                obj['mosaicId'] = SecretLockInfo.constructFromObject(data['mosaicId']);
+            if (data.hasOwnProperty('lock')) {
+                obj['lock'] = SecretLockDTO.constructFromObject(data['lock']);
             }
         }
         return obj;
     }
 
     /**
-    * @member {module:model/SecretLockInfo} mosaicId
+    * @member {module:model/SecretLockDTO} lock
     */
-    mosaicId = undefined;
+    lock = undefined;
 
 
 

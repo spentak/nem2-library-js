@@ -36,14 +36,14 @@ import UInt64DTO from './UInt64DTO';
 
 
 /**
-* The SecretLockInfo model module.
-* @module model/SecretLockInfo
+* The SecretLockDTO model module.
+* @module model/SecretLockDTO
 * @version 0.9.1
 */
-export default class SecretLockInfo {
+export default class SecretLockDTO {
     /**
-    * Constructs a new <code>SecretLockInfo</code>.
-    * @alias module:model/SecretLockInfo
+    * Constructs a new <code>SecretLockDTO</code>.
+    * @alias module:model/SecretLockDTO
     * @class
     * @param account {String} 
     * @param accountAddress {String} 
@@ -68,15 +68,15 @@ export default class SecretLockInfo {
     }
 
     /**
-    * Constructs a <code>SecretLockInfo</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>SecretLockDTO</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/SecretLockInfo} obj Optional instance to populate.
-    * @return {module:model/SecretLockInfo} The populated <code>SecretLockInfo</code> instance.
+    * @param {module:model/SecretLockDTO} obj Optional instance to populate.
+    * @return {module:model/SecretLockDTO} The populated <code>SecretLockDTO</code> instance.
     */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SecretLockInfo();
+            obj = obj || new SecretLockDTO();
 
             
             
