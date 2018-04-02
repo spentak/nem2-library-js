@@ -55,31 +55,31 @@ describe('LockRoutesApi', () => {
 		lockRoutesApi = new LockRoutesApi(CONF.SERVER);
 	});
 
-	describe('getFundsLock', () => {
-		it('should call getFundsLock successfully', () => lockRoutesApi
+	describe('getLockFunds', () => {
+		it('should call getLockFunds successfully', () => lockRoutesApi
 			.getLockFunds('ADF6E45D8C21BC3B835A2C3ABAC90800A270601F0B1361BC46C26E00968105E6')
-			.then(fundsLock => {
-				checkLockFundsInfo(fundsLock);
+			.then(lockFundsInfo => {
+				checkLockFundsInfo(lockFundsInfo);
 			}));
 	});
 
 	describe('getSecretLock', () => {
-		it('should call getFundsLock successfully', () => lockRoutesApi
+		it('should call getSecretLock successfully', () => lockRoutesApi
 			.getSecretLock('E70D37DA074D5F2CEF6BCE7E3E06D3D7E42E5A653EDDE49EDEB0628C295883' +
-                'CE6685494FE64B835762BB2D5959AE48F87501E7DB3B826B4C1BA9D3BA70BC5DC5').then(secretLock => {
-				checkSecretLockInfo(secretLock);
+                'CE6685494FE64B835762BB2D5959AE48F87501E7DB3B826B4C1BA9D3BA70BC5DC5').then(secretLockInfo => {
+				checkSecretLockInfo(secretLockInfo);
 			}));
 	});
 
-	describe('getFundsLock', () => {
-		it('should call getFundsLock successfully', () => lockRoutesApi
-			.getLockFundsInfoFromAccount(accountAddress).then(fundsLocksInfo => {
-				checkLockFundsInfo(fundsLocksInfo[0]);
+	describe('getLockFundsInfoFromAccount', () => {
+		it('should call getLockFundsInfoFromAccount successfully', () => lockRoutesApi
+			.getLockFundsInfoFromAccount(accountAddress).then(lockFundsInfo => {
+				checkLockFundsInfo(lockFundsInfo[0]);
 			}));
 	});
 
-	describe('getSecretLock', () => {
-		it('should call getFundsLock successfully', () => lockRoutesApi
+	describe('getSecretLocksInfoFromAccount', () => {
+		it('should call getSecretLocksInfoFromAccount successfully', () => lockRoutesApi
 			.getSecretLocksInfoFromAccount(accountAddress).then(secretLocksInfo => {
 				checkSecretLockInfo(secretLocksInfo[0]);
 			}));
