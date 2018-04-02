@@ -23,7 +23,7 @@ describe('LockRoutesApi', () => {
 	let lockRoutesApi;
 	const accountAddress = 'SDRDGFTDLLCB67D4HPGIMIHPNSRYRJRT7DOBGWZY';
 
-	const checkFundsLockInfo = lockFundsInfo => {
+	const checkLockFundsInfo = lockFundsInfo => {
 		/* eslint-disable no-unused-expressions */
 
 		expect(lockFundsInfo.lock.account).to.not.be.undefined;
@@ -59,7 +59,7 @@ describe('LockRoutesApi', () => {
 		it('should call getFundsLock successfully', () => lockRoutesApi
 			.getLockFunds('ADF6E45D8C21BC3B835A2C3ABAC90800A270601F0B1361BC46C26E00968105E6')
 			.then(fundsLock => {
-				checkFundsLockInfo(fundsLock);
+				checkLockFundsInfo(fundsLock);
 			}));
 	});
 
@@ -74,7 +74,7 @@ describe('LockRoutesApi', () => {
 	describe('getFundsLock', () => {
 		it('should call getFundsLock successfully', () => lockRoutesApi
 			.getLockFundsInfoFromAccount(accountAddress).then(fundsLocksInfo => {
-				checkFundsLockInfo(fundsLocksInfo[0]);
+				checkLockFundsInfo(fundsLocksInfo[0]);
 			}));
 	});
 
