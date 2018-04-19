@@ -28,70 +28,62 @@
  */
 
 
-import LockMetaDTO from './LockMetaDTO';
-import SecretLockDTO from './SecretLockDTO';
+import ApiClient from '../ApiClient';
 
 
 
 
 
 /**
-* The SecretLockInfoDTO model module.
-* @module model/SecretLockInfoDTO
+* The LockMetaDTO model module.
+* @module model/LockMetaDTO
 * @version 0.9.1
 */
-export default class SecretLockInfoDTO {
+export default class LockMetaDTO {
     /**
-    * Constructs a new <code>SecretLockInfoDTO</code>.
-    * @alias module:model/SecretLockInfoDTO
+    * Constructs a new <code>LockMetaDTO</code>.
+    * @alias module:model/LockMetaDTO
     * @class
-    * @param lock {module:model/SecretLockDTO} 
+    * @param id {String} 
     */
 
-    constructor(lock) {
+    constructor(id) {
         
 
         
         
 
-        this['lock'] = lock;
+        this['id'] = id;
 
         
     }
 
     /**
-    * Constructs a <code>SecretLockInfoDTO</code> from a plain JavaScript object, optionally creating a new instance.
+    * Constructs a <code>LockMetaDTO</code> from a plain JavaScript object, optionally creating a new instance.
     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
     * @param {Object} data The plain JavaScript object bearing properties of interest.
-    * @param {module:model/SecretLockInfoDTO} obj Optional instance to populate.
-    * @return {module:model/SecretLockInfoDTO} The populated <code>SecretLockInfoDTO</code> instance.
+    * @param {module:model/LockMetaDTO} obj Optional instance to populate.
+    * @return {module:model/LockMetaDTO} The populated <code>LockMetaDTO</code> instance.
     */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SecretLockInfoDTO();
+            obj = obj || new LockMetaDTO();
 
             
             
             
 
-            if (data.hasOwnProperty('lock')) {
-                obj['lock'] = SecretLockDTO.constructFromObject(data['lock']);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = LockMetaDTO.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
     }
 
     /**
-    * @member {module:model/SecretLockDTO} lock
+    * @member {String} id
     */
-    lock = undefined;
-    /**
-    * @member {module:model/LockMetaDTO} meta
-    */
-    meta = undefined;
+    id = undefined;
 
 
 

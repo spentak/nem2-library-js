@@ -29,6 +29,7 @@
 
 
 import LockFundsDTO from './LockFundsDTO';
+import LockMetaDTO from './LockMetaDTO';
 
 
 
@@ -76,6 +77,9 @@ export default class LockFundsInfoDTO {
             if (data.hasOwnProperty('lock')) {
                 obj['lock'] = LockFundsDTO.constructFromObject(data['lock']);
             }
+            if (data.hasOwnProperty('meta')) {
+                obj['meta'] = LockMetaDTO.constructFromObject(data['meta']);
+            }
         }
         return obj;
     }
@@ -84,6 +88,10 @@ export default class LockFundsInfoDTO {
     * @member {module:model/LockFundsDTO} lock
     */
     lock = undefined;
+    /**
+    * @member {module:model/LockMetaDTO} meta
+    */
+    meta = undefined;
 
 
 
