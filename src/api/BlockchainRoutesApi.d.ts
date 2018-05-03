@@ -25,7 +25,7 @@ export declare class BlockchainRoutesApi {
 
     getBlocksByHeightWithLimit(height: number, limit: number): Promise<any>;
 
-    getMerkleTreeWithHttpInfo(height: number, hash: string): Promise<any>;
+    getMerkleTree(height: number, hash: string): Promise<any>;
 
     getBlockchainHeight(): Promise<any>;
 
