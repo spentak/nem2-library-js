@@ -45,15 +45,17 @@ export default class MerkleTreeInfoDTO {
     * Constructs a new <code>MerkleTreeInfoDTO</code>.
     * @alias module:model/MerkleTreeInfoDTO
     * @class
+    * @param rootHash {String} 
+    * @param merkleTreeItems {Array.<module:model/MerkleTreeItemDTO>} 
     */
 
-    constructor() {
+    constructor(rootHash, merkleTreeItems) {
         
 
         
         
 
-        
+        this['rootHash'] = rootHash;this['merkleTreeItems'] = merkleTreeItems;
 
         
     }
@@ -73,6 +75,9 @@ export default class MerkleTreeInfoDTO {
             
             
 
+            if (data.hasOwnProperty('rootHash')) {
+                obj['rootHash'] = ApiClient.convertToType(data['rootHash'], 'String');
+            }
             if (data.hasOwnProperty('merkleTreeItems')) {
                 obj['merkleTreeItems'] = ApiClient.convertToType(data['merkleTreeItems'], [MerkleTreeItemDTO]);
             }
@@ -80,6 +85,10 @@ export default class MerkleTreeInfoDTO {
         return obj;
     }
 
+    /**
+    * @member {String} rootHash
+    */
+    rootHash = undefined;
     /**
     * @member {Array.<module:model/MerkleTreeItemDTO>} merkleTreeItems
     */
